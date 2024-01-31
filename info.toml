@@ -1,0 +1,9 @@
+[meta]
+name     = "Friends Leaderboard"
+author   = "Willgundee"
+category = "Race"
+version  = "1.0.0"
+
+
+[script]
+dependencies = [ "NadeoServices", "VehicleState" ]
