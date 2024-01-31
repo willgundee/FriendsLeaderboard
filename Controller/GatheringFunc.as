@@ -44,7 +44,7 @@ LeaderboardEntry@ GetPersonalBestEntry() {
  */
 array<LeaderboardEntry@> GetFriendsEntry(string friends) {
     array<LeaderboardEntry@> positionsEntry;
-    if(!validMap){
+    if(!validMap || friends == ""){
         return positionsEntry;
     }
 
