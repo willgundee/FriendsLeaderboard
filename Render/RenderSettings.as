@@ -117,12 +117,14 @@ void RenderPositionCustomization(){
     if(UI::Button("+ : Add a friend")){
         nbSizePositionToGetArray++;
         allFriendsToGet.InsertLast("");
+        allFriendsName.InsertLast("");
         OnSettingsChanged();
     }
     if(UI::Button("- : Remove a friend")){
         if(nbSizePositionToGetArray > 1){
             nbSizePositionToGetArray--;
             allFriendsToGet.RemoveAt(nbSizePositionToGetArray);
+            allFriendsName.RemoveAt(nbSizePositionToGetArray);
             OnSettingsChanged();
         }
     }
