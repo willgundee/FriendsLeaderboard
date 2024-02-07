@@ -52,9 +52,8 @@ void ForceRefresh(){
  */
 bool UserCanUseThePlugin(){
     //Since this plugin request the leaderboard, we need to check if the user's current subscription has those permissions
-    return (Permissions::ViewRecords());
+    return (Permissions::ViewRecords() && Permissions::CreateClub());
 }
-
 
 /**
  * Fetch an endpoint from the Nadeo Live Services
