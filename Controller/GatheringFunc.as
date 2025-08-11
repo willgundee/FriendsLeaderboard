@@ -42,9 +42,9 @@ LeaderboardEntry@ GetPersonalBestEntry() {
 /**
  * Return the leaderboard entry of a given position
  */
-array<LeaderboardEntry@> GetFriendsEntry(string friends) {
+array<LeaderboardEntry@> GetFriendsEntry(string _friends) {
     array<LeaderboardEntry@> positionsEntry;
-    if(!validMap || friends == ""){
+    if(!validMap || _friends == ""){
         return positionsEntry;
     }
 
@@ -54,8 +54,8 @@ array<LeaderboardEntry@> GetFriendsEntry(string friends) {
     //check that we're in a map
     if (network.ClientManiaAppPlayground !is null && network.ClientManiaAppPlayground.Playground !is null && network.ClientManiaAppPlayground.Playground.Map !is null){
 		string mapid = currentMapId;//network.ClientManiaAppPlayground.Playground.Map.MapInfo.MapId;
-        auto info = FetchEndpoint("https://prod.trackmania.core.nadeo.online/mapRecords/?accountIdList=" + friends + "&mapIdList=" + mapid);
-		trace(friends);
+        auto info = FetchEndpoint("https://prod.trackmania.core.nadeo.online/mapRecords/?accountIdList=" + _friends + "&mapIdList=" + mapid);
+		trace(_friends);
         if(info.GetType() != Json::Type::Null) {
 			trace(info.Length);
 			for(uint i = 0; i < info.Length; i++){
