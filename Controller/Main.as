@@ -76,7 +76,7 @@ void RefreshLeaderboard(){
     leaderboardArrayTmp.InsertLast(currentPbEntry);
 
 	// Make all the request in local (apart from impossible calls like medals above pb)
-	array<Meta::PluginCoroutine@> coroutines;
+	array<awaitable@> coroutines;
 	auto friendEntryFunc = startnew(FriendsEntryCoroutine);
 	coroutines.InsertLast(friendEntryFunc);
 
